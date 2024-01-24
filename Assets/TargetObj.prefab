@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5599656953208154844}
   - component: {fileID: 6269086161673085852}
   - component: {fileID: 6475120068478168233}
+  - component: {fileID: -7810940619934381318}
   m_Layer: 0
   m_Name: TargetObj
   m_TagString: Untagged
@@ -97,4 +98,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5838eba4c26839c49bf1d83f8da908d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  targetSpeed: 1.5
+--- !u!135 &-7810940619934381318
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160690958640480707}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.28
+  m_Center: {x: 0, y: 0, z: 0}
