@@ -17,14 +17,18 @@ public class TargetSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < delay)
+        // for (int i = 0; i < 5; i++)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            SpawnTarget();
-            timer = 0;
+            if (timer < delay)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+
+                SpawnTarget();
+                timer = 0;
+            }
         }
     }
 
