@@ -21,8 +21,9 @@ public class TargetSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (targetCount < 5)
         {
-            if (timer < delay && targetCount <= 5)
+            if (timer < delay)
             {
                 timer += Time.deltaTime;
 
@@ -33,6 +34,10 @@ public class TargetSpawner : MonoBehaviour
                 targetCount++;
                 timer = 0;
             }
+        }
+        else
+        {
+            TargetObj.SetActive(false);
         }
 
     }
