@@ -9,37 +9,48 @@ public class TargetSpawner : MonoBehaviour
 
     private float targetCount = 0;
 
+    public bool GameStarted = false;
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
 
+    public void StartButton()
+    {
+        GameStarted = true;
+        targetCount = 0;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (targetCount < 5)
+        if (GameStarted == true)
         {
-            if (timer < delay)
+            if (targetCount < 5)
             {
-                timer += Time.deltaTime;
+                if (timer < delay)
+                {
+                    timer += Time.deltaTime;
 
+                }
+                else
+                {
+                    SpawnTarget();
+                    targetCount++;
+                    timer = 0;
+                }
             }
-            else
-            {
-                SpawnTarget();
-                targetCount++;
-                timer = 0;
+            // else { display end screen + main menu button + change mouse icon back }
+            else {
+                Cursor.SetCursor(null, hotSpot, cursorMode);
             }
         }
-        else
-        {
-            TargetObj.SetActive(false);
-        }
-
     }
 
     void SpawnTarget()
