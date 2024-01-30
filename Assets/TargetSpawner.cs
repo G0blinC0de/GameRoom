@@ -1,5 +1,7 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TargetSpawner : MonoBehaviour
 {
@@ -9,7 +11,11 @@ public class TargetSpawner : MonoBehaviour
 
     private float targetCount = 0;
 
+    public int gameScore;
+    public Text ScoreUI;
+
     public bool GameStarted = false;
+
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
@@ -26,6 +32,7 @@ public class TargetSpawner : MonoBehaviour
     {
         GameStarted = true;
         targetCount = 0;
+        gameScore = 0;
     }
     // Update is called once per frame
     void Update()
@@ -47,8 +54,10 @@ public class TargetSpawner : MonoBehaviour
                 }
             }
             // else { display end screen + main menu button + change mouse icon back }
-            else {
+            else
+            {
                 Cursor.SetCursor(null, hotSpot, cursorMode);
+                
             }
         }
     }
@@ -58,7 +67,10 @@ public class TargetSpawner : MonoBehaviour
 
         {
             var position = new Vector3(Random.Range(-3f, 3f), -3, 0);
-            Instantiate(TargetObj, position, Quaternion.identity);
+            var target = Instantiate(TargetObj, position, Quaternion.identity);
+            var behave = target.GetComponent<TargetBehave>();
+            behave.targetSpawner = this;
+
         }
     }
 }
