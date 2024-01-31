@@ -25,7 +25,7 @@ public class TargetSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+
     }
 
     public void StartButton()
@@ -39,6 +39,7 @@ public class TargetSpawner : MonoBehaviour
     {
         if (GameStarted == true)
         {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
             if (targetCount < 5)
             {
                 if (timer < delay)
@@ -57,8 +58,9 @@ public class TargetSpawner : MonoBehaviour
             else
             {
                 Cursor.SetCursor(null, hotSpot, cursorMode);
-                
+
             }
+
         }
     }
 
