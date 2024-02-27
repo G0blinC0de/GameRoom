@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameTarget.unity
     guid: 3f9fc093434e03d4d8359195103db906
+  - enabled: 1
+    path: Assets/Scenes/gameSimonSays.unity
+    guid: ebe98f2fc80547c4d94c70f973f80113
   m_configObjects: {}

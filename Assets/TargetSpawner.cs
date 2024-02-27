@@ -55,12 +55,11 @@ public class TargetSpawner : MonoBehaviour
                 }
             }
             // else { display end screen + main menu button + change mouse icon back }
-            else
-            {
-                Cursor.SetCursor(null, hotSpot, cursorMode);
 
-            }
-
+        }
+        else
+        {
+            Cursor.SetCursor(null, hotSpot, cursorMode);
         }
     }
 

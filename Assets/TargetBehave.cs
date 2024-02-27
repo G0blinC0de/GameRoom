@@ -24,7 +24,6 @@ public class TargetBehave : MonoBehaviour
         transform.position = transform.position + (Vector3.up * targetSpeed) * Time.deltaTime;
         if (transform.position.y > outofBounds)
         {
-            Debug.Log("Testing");
             Destroy(gameObject);
         }
     }
