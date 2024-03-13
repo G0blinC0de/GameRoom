@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSpeed: 2
+  TargetDestroyed: {fileID: 8300000, guid: 44766caa059435f4fb71af84b2bea7e4, type: 3}
   outofBounds: 2
   targetSpawner: {fileID: 0}
 --- !u!135 &-7810940619934381318

@@ -3,7 +3,10 @@ guid: 5838eba4c26839c49bf1d83f8da908d7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - TargetDestroyed: {fileID: 8300000, guid: 44766caa059435f4fb71af84b2bea7e4, type: 3}
+  - audioSource: {instanceID: 0}
+  - targetSpawner: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

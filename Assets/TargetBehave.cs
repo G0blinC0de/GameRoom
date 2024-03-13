@@ -7,6 +7,8 @@ public class TargetBehave : MonoBehaviour
 {
     public float targetSpeed = 1f;
 
+    public AudioClip TargetDestroyed;
+
     public int outofBounds = 2;
 
     public TargetSpawner targetSpawner;
@@ -31,7 +33,10 @@ public class TargetBehave : MonoBehaviour
     private void OnMouseDown()
     {
         IncreaseScore();
+        AudioSource audioSource = Camera.main.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(TargetDestroyed);
         Destroy(gameObject);
+
     }
 
     private void IncreaseScore()

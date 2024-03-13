@@ -59,7 +59,7 @@ public class TargetSpawner : MonoBehaviour
         }
         else
         {
-            Cursor.SetCursor(null, hotSpot, cursorMode);
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
 

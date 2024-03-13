@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     private List<int> playerSequenceList = new List<int>(); // Pattern Returned by Player
 
     public List<AudioClip> buttonSoundList = new List<AudioClip>();
-
+    // List of Lists - buttonColors is Prime List, within that list are 2 values for highlighted vs unhighlighted color
+    // so referencing buttonColors is List, and then 0 value or 1 value color within Prime List
     public List<List<Color32>> buttonColors = new List<List<Color32>>();
 
     public List<Button> clickableButtons;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(buttonSoundList[buttonID]);
         yield return new WaitForSeconds(0.5f);
         clickableButtons[buttonID].GetComponent<Image>().color = buttonColors[buttonID][0];
+        yield return new WaitForSeconds(0.5f);
     }
 
     public IEnumerator GameOver()
@@ -73,7 +75,7 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(loseSound);
         playerSequenceList.Clear();
         playerTaskList.Clear();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         startButton.SetActive(true);
     }
     public IEnumerator StartNextRound()
